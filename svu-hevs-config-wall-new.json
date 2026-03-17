@@ -1,0 +1,1667 @@
+// Single-line comments are supported.
+{       
+  "globals": { 
+
+  },
+
+  // Platforms contains object definitions for specific installation configurations.
+  // Platforms can inherit from previously defined platforms and then override/extend them.
+  "platforms": {
+
+      
+"svu-wall-2": {
+    "cluster": {
+        "data_port": "7777",
+        "framelock": "software",
+        "master": "s-h-astrotour",
+        "sync_port": "7778"
+    },
+    "cameras": {
+        "default": {
+	    "look_at": [
+		0,
+		0,
+		3500.0
+	    ],
+	    "position": [
+		0,
+		0,
+		0
+	    ],
+	    "up": [
+		0,
+		1,
+		0
+	    ]
+        }
+    },
+    "stereo": {
+        "mode": "topbottom",
+        "separation": "0.065",
+        "alignment": "screen"
+    },
+     "nodes": {
+	"s-h-astrotour": {
+            "address": "10.57.17.204",
+            "display": [
+		"disp_centre"
+            ],
+            "resolution": [
+		3840,
+		2160
+            ]
+        },
+        "s-h-astrored": {
+	    "address": "10.57.17.206",
+            "display": [
+		"disp_L_004",
+		"disp_L_003",
+		"disp_L_002",
+		"disp_L_001",
+		"disp_centre_split1"
+            ],
+	    "resolution": [
+		7680,
+		4320
+            ]
+        },
+        "s-h-astrogreen": {
+	    "address": "10.57.17.207",
+            "display": [
+		"disp_centre_split2_split1",
+		"disp_centre_split2_split2_split1"
+            ],
+	    "resolution": [
+		7680,
+		4320
+            ]
+        },
+        "s-h-astroblue": {
+	    "address": "10.57.17.208",
+          "display": [
+            "disp_centre_split2_split2_split2",
+            "disp_R_001",
+            "disp_R_002",
+            "disp_R_003",
+            "disp_R_004"
+          ],
+          "resolution": [
+            7680,
+            4320
+          ]
+        }
+    },
+    "displays": {
+	"disp_centre": {
+            "type": "offaxis",
+            "ul": [
+		-5.0,
+		1.6875,
+		3.5
+            ],
+            "ll": [
+		-5.0,
+		- 1.6875,
+		3.5
+            ],
+            "lr": [
+		5.0,
+		- 1.6875,
+		3.5
+            ],
+            "viewport": "vp_disp_centre"
+        },
+        "disp_R_001": {
+            "type": "offaxis",
+            "ul": [
+		7.5,
+		1.688,
+		0.0
+            ],
+            "ll": [
+		7.5,
+		-1.688,
+		0.0
+            ],
+            "lr": [
+		8.932,
+		-1.688,
+		-0.384
+            ],
+            "width_px": 960
+        },
+        "disp_R_002": {
+            "type": "offaxis",
+            "ul": [
+		8.932,
+		1.688,
+		-0.384
+            ],
+            "ll": [
+		8.932,
+		-1.688,
+		-0.384
+            ],
+            "lr": [
+		9.98,
+		-1.688,
+		-1.432
+            ],
+            "width_px": 960
+        },
+        "disp_R_003": {
+            "type": "offaxis",
+            "ul": [
+		9.98,
+		1.688,
+		-1.432
+            ],
+            "ll": [
+		9.98,
+		-1.688,
+		-1.432
+            ],
+            "lr": [
+		10.364,
+		-1.688,
+		-2.864
+            ],
+            "width_px": 960
+        },
+        "disp_R_004": {
+            "type": "offaxis",
+            "ul": [
+		10.364,
+		1.688,
+		-2.864
+            ],
+            "ll": [
+		10.364,
+		-1.688,
+            -2.864
+          ],
+          "lr": [
+            10.364,
+            -1.688,
+            -5.864
+          ],
+          "width_px": 1920
+        },
+        "disp_L_001": {
+          "type": "offaxis",
+          "ul": [
+            -8.932,
+            1.688,
+            -0.384
+          ],
+          "ll": [
+            -8.932,
+            -1.688,
+            -0.384
+          ],
+          "lr": [
+            -7.5,
+            -1.688,
+            0.0
+          ],
+          "width_px": 960
+        },
+        "disp_L_002": {
+          "type": "offaxis",
+          "ul": [
+            -9.98,
+            1.688,
+            -1.432
+          ],
+          "ll": [
+            -9.98,
+            -1.688,
+            -1.432
+          ],
+          "lr": [
+            -8.932,
+            -1.688,
+            -0.384
+          ],
+          "width_px": 960
+        },
+        "disp_L_003": {
+          "type": "offaxis",
+          "ul": [
+            -10.364,
+            1.688,
+            -2.864
+          ],
+          "ll": [
+            -10.364,
+            -1.688,
+            -2.864
+          ],
+          "lr": [
+            -9.98,
+            -1.688,
+            -1.432
+          ],
+          "width_px": 960
+        },
+        "disp_L_004": {
+          "type": "offaxis",
+          "ul": [
+            -10.364,
+            1.688,
+            -5.864
+          ],
+          "ll": [
+            -10.364,
+            -1.688,
+            -5.864
+          ],
+          "lr": [
+            -10.364,
+            -1.688,
+            -2.864
+          ],
+          "width_px": 1920
+        },
+        "disp_centre_split1": {
+          "type": "offaxis",
+          "ul": [
+            -7.5,
+            1.688,
+            0.0
+          ],
+          "ll": [
+            -7.5,
+            -1.688,
+            0.0
+          ],
+          "lr": [
+            -5.55,
+            -1.688,
+            0.0
+          ],
+          "width_px": 1248
+        },
+        "disp_centre_split2_split1": {
+          "type": "offaxis",
+          "ul": [
+            -5.55,
+            1.688,
+            0.0
+          ],
+          "ll": [
+            -5.55,
+            -1.688,
+            0.0
+          ],
+          "lr": [
+            0.45,
+            -1.688,
+            0.0
+          ],
+          "width_px": 3840
+        },
+        "disp_centre_split2_split2_split1": {
+          "type": "offaxis",
+          "ul": [
+            0.45,
+            1.688,
+            0.0
+          ],
+          "ll": [
+            0.45,
+            -1.688,
+            0.0
+          ],
+          "lr": [
+            6.45,
+            -1.688,
+            0.0
+          ],
+          "width_px": 3840
+        },
+        "disp_centre_split2_split2_split2": {
+          "type": "offaxis",
+          "ul": [
+            6.45,
+            1.688,
+            0.0
+          ],
+          "ll": [
+            6.45,
+            -1.688,
+            0.0
+          ],
+          "lr": [
+            7.5,
+            -1.688,
+            0.0
+          ],
+          "width_px": 672
+        }
+    },
+    "viewports": {
+	"vp_disp_centre": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 1.0,
+            "height": 1.0
+        },
+        "vp_disp_L_004": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 0.25,
+            "height": 1.0
+        },
+        "vp_disp_L_003": {
+            "x": 0.25,
+            "y": 0.0,
+            "width": 0.125,
+            "height": 1.0
+        },
+        "vp_disp_L_002": {
+            "x": 0.375,
+            "y": 0.0,
+            "width": 0.125,
+            "height": 1.0
+        },
+        "vp_disp_L_001": {
+            "x": 0.5,
+            "y": 0.0,
+            "width": 0.125,
+            "height": 1.0
+        },
+        "vp_disp_centre_split1": {
+            "x": 0.625,
+            "y": 0.0,
+            "width": 0.1625,
+            "height": 1.0
+        },
+        "vp_disp_centre_split2_split1": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 0.5,
+            "height": 1.0
+        },
+        "vp_disp_centre_split2_split2_split1": {
+            "x": 0.5,
+            "y": 0.0,
+            "width": 0.5,
+            "height": 1.0
+        },
+        "vp_disp_centre_split2_split2_split2": {
+            "x": 0.2875,
+            "y": 0.0,
+            "width": 0.0875,
+            "height": 1.0
+        },
+        "vp_disp_R_001": {
+            "x": 0.375,
+            "y": 0.0,
+            "width": 0.125,
+            "height": 1.0
+        },
+        "vp_disp_R_002": {
+            "x": 0.5,
+            "y": 0.0,
+            "width": 0.125,
+            "height": 1.0
+        },
+        "vp_disp_R_003": {
+            "x": 0.625,
+            "y": 0.0,
+            "width": 0.125,
+            "height": 1.0
+        },
+        "vp_disp_R_004": {
+            "x": 0.75,
+            "y": 0.0,
+            "width": 0.25,
+            "height": 1.0
+        }
+    }
+  }
+  
+
+
+
+
+  "svu-small": {
+      "cluster": {
+        "data_port": "7777",
+        "framelock": "software",
+        "master": "S-H-ASTROTOUR",
+        "sync_port": "7778",
+        "framelock_master": "S-H-ASTROTOUR",
+        "lock_port": "7779"
+      },
+      "nodes": {
+         "S-H-ASTROTOUR": {
+          "address": "10.57.17.204",
+          "display": [
+            "disp_centre"
+          ],
+          "resolution": [
+            3840,
+            2160
+          ]
+        },
+        "S-H-ASTRORED": {
+          "address": "10.57.17.206",
+          "display": [
+            "disp_L_004",
+            "disp_L_003",
+            "disp_L_002",
+            "disp_L_001",
+            "disp_L_000"
+          ],
+          "resolution": [
+            7680,
+            4320
+          ]
+        },
+       
+      },
+      "displays": {
+        "disp_L_004": {
+          "type": "offaxis",
+          "ul": [
+            -10.364,
+             1.6875,
+            -2.415
+          ],
+          "ll": [
+            -10.364,
+            - 1.6875,
+            -2.415
+          ],
+          "lr": [
+            -10.364,
+            - 1.6875,
+            0.636
+          ],
+          "viewport": "vp_disp_L_004"
+        },
+        "disp_L_003": {
+          "type": "offaxis",
+          "ul": [
+            -10.364,
+             1.6875,
+            0.636
+          ],
+          "ll": [
+            -10.364,
+            - 1.6875,
+            0.636
+          ],
+          "lr": [
+            -9.98,
+            - 1.6875,
+            2.068
+          ],
+          "viewport": "vp_disp_L_003"
+        },
+        "disp_L_002": {
+          "type": "offaxis",
+          "ul": [
+            -9.98,
+             1.6875,
+            2.068
+          ],
+          "ll": [
+            -9.98,
+            - 1.6875,
+            2.068
+          ],
+          "lr": [
+            -8.932,
+            - 1.6875,
+            3.116
+          ],
+          "viewport": "vp_disp_L_002"
+        },
+        "disp_L_001": {
+          "type": "offaxis",
+          "ul": [
+            -8.932,
+             1.6875,
+            3.116
+          ],
+          "ll": [
+            -8.932,
+            - 1.6875,
+            3.116
+          ],
+          "lr": [
+            -7.5,
+            - 1.6875,
+            3.5
+          ],
+          "viewport": "vp_disp_L_001"
+        },
+        "disp_L_000": {
+          "type": "offaxis",
+          "ul": [
+            -7.5,
+             1.6875,
+            3.5
+          ],
+          "ll": [
+            -7.5,
+            - 1.6875,
+            3.5
+          ],
+          "lr": [
+            -5.0,
+            - 1.6875,
+            3.5
+          ],
+          "viewport": "vp_disp_L_000"
+        },
+        "disp_centre": {
+          "type": "offaxis",
+          "ul": [
+            -5.0,
+             1.6875,
+            3.5
+          ],
+          "ll": [
+            -5.0,
+            - 1.6875,
+            3.5
+          ],
+          "lr": [
+            5.0,
+            - 1.6875,
+            3.5
+          ],
+          "viewport": "vp_disp_centre"
+        },
+        "disp_R_000": {
+          "type": "offaxis",
+          "ul": [
+            5.0,
+             1.6875,
+            3.5
+          ],
+          "ll": [
+            5.0,
+            - 1.6875,
+            3.5
+          ],
+          "lr": [
+            7.5,
+            - 1.6875,
+            3.5
+          ],
+          "viewport": "vp_disp_R_000"
+        },
+        "disp_R_001": {
+          "type": "offaxis",
+          "ul": [
+            7.5,
+             1.6875,
+            3.5
+          ],
+          "ll": [
+            7.5,
+            - 1.6875,
+            3.5
+          ],
+          "lr": [
+            8.932,
+            - 1.6875,
+            3.116
+          ],
+          "viewport": "vp_disp_R_001"
+        },
+        "disp_R_002": {
+          "type": "offaxis",
+          "ul": [
+            8.932,
+             1.6875,
+            3.116
+          ],
+          "ll": [
+            8.932,
+            - 1.6875,
+            3.116
+          ],
+          "lr": [
+            9.98,
+            - 1.6875,
+            2.068
+          ],
+          "viewport": "vp_disp_R_002"
+        },
+        "disp_R_003": {
+          "type": "offaxis",
+          "ul": [
+            9.98,
+            1.6875,
+            2.068
+          ],
+          "ll": [
+            9.98,
+            - 1.6875,
+            2.068
+          ],
+          "lr": [
+            10.364,
+            - 1.6875,
+            0.636
+          ],
+          "viewport": "vp_disp_R_003"
+        },
+        "disp_R_004": {
+          "type": "offaxis",
+          "ul": [
+            10.364,
+             1.6875,
+            0.636
+          ],
+          "ll": [
+            10.364,
+            - 1.6875,
+            0.636
+          ],
+          "lr": [
+            10.364,
+            - 1.6875,
+            -2.415
+          ],
+          "viewport": "vp_disp_R_004"
+        }
+      },
+      "viewports": {
+        "vp_disp_L_004": {
+          "x": 0.0,
+          "y": 0.0,
+          "width": 0.305078125,
+          "height": 1.0
+        },
+        "vp_disp_L_003": {
+          "x": 0.305078125,
+          "y": 0.0,
+          "width": 0.14830729166666667,
+          "height": 1.0
+        },
+        "vp_disp_L_002": {
+          "x": 0.45338541666666665,
+          "y": 0.0,
+          "width": 0.14830729166666667,
+          "height": 1.0
+        },
+        "vp_disp_L_001": {
+          "x": 0.6016927083333333,
+          "y": 0.0,
+          "width": 0.14830729166666667,
+          "height": 1.0
+        },
+        "vp_disp_L_000": {
+          "x": 0.75,
+          "y": 0.0,
+          "width": 0.25,
+          "height": 1.0
+        },
+        "vp_disp_centre": {
+          "x": 0.0,
+          "y": 0.0,
+          "width": 1.0,
+          "height": 1.0
+        },
+        "vp_disp_R_000": {
+          "x": 0.0,
+          "y": 0.0,
+          "width": 0.25,
+          "height": 1.0
+        },
+        "vp_disp_R_001": {
+          "x": 0.25,
+          "y": 0.0,
+          "width": 0.14830729166666667,
+          "height": 1.0
+        },
+        "vp_disp_R_002": {
+          "x": 0.3983072916666667,
+          "y": 0.0,
+          "width": 0.14830729166666667,
+          "height": 1.0
+        },
+        "vp_disp_R_003": {
+          "x": 0.5466145833333333,
+          "y": 0.0,
+          "width": 0.14830729166666667,
+          "height": 1.0
+        },
+        "vp_disp_R_004": {
+          "x": 0.694921875,
+          "y": 0.0,
+          "width": 0.305078125,
+          "height": 1.0
+        }
+      },
+      "cameras": {
+        "default": {
+          "look_at": [
+            0,
+            0,
+            3500.0
+          ],
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "up": [
+            0,
+            1,
+            0
+          ]
+        }
+      },
+      "stereo": {
+        "mode": "topbottom",
+        "separation": "0.065",
+        "alignment": "screen"
+      }
+    }
+       
+       
+
+
+
+
+
+
+
+    "svu-wall": {
+      "cluster": {
+        "data_port": "7777",
+        "framelock": "software",
+        "master": "s-h-astrotour",
+        "sync_port": "7778"
+      },
+      "nodes": {
+         "s-h-astrotour": {
+          "address": "10.57.17.204",
+          "display": [
+            "disp_centre"
+          ],
+          "resolution": [
+            3840,
+            2160
+          ]
+        },
+        "s-h-astrored": {
+          "address": "10.57.17.206",
+          "display": [
+            "disp_L_004",
+            "disp_L_003",
+            "disp_L_002",
+            "disp_L_001",
+            "disp_L_000"
+          ],
+          "resolution": [
+            7680,
+            4320
+          ]
+        },
+        "s-h-astrogreen": {
+          "address": "10.57.17.207",
+          "display": [
+            "disp_centre"
+          ],
+          "resolution": [
+            7680,
+            4320
+          ]
+        },
+        "s-h-astroblue": {
+          "address": "10.57.17.208",
+          "display": [
+            "disp_R_000",
+            "disp_R_001",
+            "disp_R_002",
+            "disp_R_003",
+            "disp_R_004"
+          ],
+          "resolution": [
+            7680,
+            4320
+          ]
+        }
+      },
+      "displays": {
+        "disp_L_004": {
+          "type": "offaxis",
+          "ul": [
+            -10.364,
+             1.6875,
+            -2.415
+          ],
+          "ll": [
+            -10.364,
+            - 1.6875,
+            -2.415
+          ],
+          "lr": [
+            -10.364,
+            - 1.6875,
+            0.636
+          ],
+          "viewport": "vp_disp_L_004"
+        },
+        "disp_L_003": {
+          "type": "offaxis",
+          "ul": [
+            -10.364,
+             1.6875,
+            0.636
+          ],
+          "ll": [
+            -10.364,
+            - 1.6875,
+            0.636
+          ],
+          "lr": [
+            -9.98,
+            - 1.6875,
+            2.068
+          ],
+          "viewport": "vp_disp_L_003"
+        },
+        "disp_L_002": {
+          "type": "offaxis",
+          "ul": [
+            -9.98,
+             1.6875,
+            2.068
+          ],
+          "ll": [
+            -9.98,
+            - 1.6875,
+            2.068
+          ],
+          "lr": [
+            -8.932,
+            - 1.6875,
+            3.116
+          ],
+          "viewport": "vp_disp_L_002"
+        },
+        "disp_L_001": {
+          "type": "offaxis",
+          "ul": [
+            -8.932,
+             1.6875,
+            3.116
+          ],
+          "ll": [
+            -8.932,
+            - 1.6875,
+            3.116
+          ],
+          "lr": [
+            -7.5,
+            - 1.6875,
+            3.5
+          ],
+          "viewport": "vp_disp_L_001"
+        },
+        "disp_L_000": {
+          "type": "offaxis",
+          "ul": [
+            -7.5,
+             1.6875,
+            3.5
+          ],
+          "ll": [
+            -7.5,
+            - 1.6875,
+            3.5
+          ],
+          "lr": [
+            -5.0,
+            - 1.6875,
+            3.5
+          ],
+          "viewport": "vp_disp_L_000"
+        },
+        "disp_centre": {
+          "type": "offaxis",
+          "ul": [
+            -5.0,
+             1.6875,
+            3.5
+          ],
+          "ll": [
+            -5.0,
+            - 1.6875,
+            3.5
+          ],
+          "lr": [
+            5.0,
+            - 1.6875,
+            3.5
+          ],
+          "viewport": "vp_disp_centre"
+        },
+        "disp_R_000": {
+          "type": "offaxis",
+          "ul": [
+            5.0,
+             1.6875,
+            3.5
+          ],
+          "ll": [
+            5.0,
+            - 1.6875,
+            3.5
+          ],
+          "lr": [
+            7.5,
+            - 1.6875,
+            3.5
+          ],
+          "viewport": "vp_disp_R_000"
+        },
+        "disp_R_001": {
+          "type": "offaxis",
+          "ul": [
+            7.5,
+             1.6875,
+            3.5
+          ],
+          "ll": [
+            7.5,
+            - 1.6875,
+            3.5
+          ],
+          "lr": [
+            8.932,
+            - 1.6875,
+            3.116
+          ],
+          "viewport": "vp_disp_R_001"
+        },
+        "disp_R_002": {
+          "type": "offaxis",
+          "ul": [
+            8.932,
+             1.6875,
+            3.116
+          ],
+          "ll": [
+            8.932,
+            - 1.6875,
+            3.116
+          ],
+          "lr": [
+            9.98,
+            - 1.6875,
+            2.068
+          ],
+          "viewport": "vp_disp_R_002"
+        },
+        "disp_R_003": {
+          "type": "offaxis",
+          "ul": [
+            9.98,
+             1.6875,
+            2.068
+          ],
+          "ll": [
+            9.98,
+            - 1.6875,
+            2.068
+          ],
+          "lr": [
+            10.364,
+            - 1.6875,
+            0.636
+          ],
+          "viewport": "vp_disp_R_003"
+        },
+        "disp_R_004": {
+          "type": "offaxis",
+          "ul": [
+            10.364,
+             1.6875,
+            0.636
+          ],
+          "ll": [
+            10.364,
+            - 1.6875,
+            0.636
+          ],
+          "lr": [
+            10.364,
+            - 1.6875,
+            -2.415
+          ],
+          "viewport": "vp_disp_R_004"
+        }
+      },
+      "viewports": {
+        "vp_disp_L_004": {
+          "x": 0.0,
+          "y": 0.0,
+          "width": 0.305078125,
+          "height": 1.0
+        },
+        "vp_disp_L_003": {
+          "x": 0.305078125,
+          "y": 0.0,
+          "width": 0.14830729166666667,
+          "height": 1.0
+        },
+        "vp_disp_L_002": {
+          "x": 0.45338541666666665,
+          "y": 0.0,
+          "width": 0.14830729166666667,
+          "height": 1.0
+        },
+        "vp_disp_L_001": {
+          "x": 0.6016927083333333,
+          "y": 0.0,
+          "width": 0.14830729166666667,
+          "height": 1.0
+        },
+        "vp_disp_L_000": {
+          "x": 0.75,
+          "y": 0.0,
+          "width": 0.25,
+          "height": 1.0
+        },
+        "vp_disp_centre": {
+          "x": 0.0,
+          "y": 0.0,
+          "width": 1.0,
+          "height": 1.0
+        },
+        "vp_disp_R_000": {
+          "x": 0.0,
+          "y": 0.0,
+          "width": 0.25,
+          "height": 1.0
+        },
+        "vp_disp_R_001": {
+          "x": 0.25,
+          "y": 0.0,
+          "width": 0.14830729166666667,
+          "height": 1.0
+        },
+        "vp_disp_R_002": {
+          "x": 0.3983072916666667,
+          "y": 0.0,
+          "width": 0.14830729166666667,
+          "height": 1.0
+        },
+        "vp_disp_R_003": {
+          "x": 0.5466145833333333,
+          "y": 0.0,
+          "width": 0.14830729166666667,
+          "height": 1.0
+        },
+        "vp_disp_R_004": {
+          "x": 0.694921875,
+          "y": 0.0,
+          "width": 0.305078125,
+          "height": 1.0
+        }
+      },
+      "cameras": {
+        "default": {
+          "look_at": [
+            0,
+            0,
+            3500.0
+          ],
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "up": [
+            0,
+            1,
+            0
+          ]
+        }
+      },
+      "stereo": {
+        "mode": "topbottom",
+        "separation": "0.065",
+        "alignment": "screen"
+      }
+    }
+       
+       
+ 
+  "TwoPcDGB": {
+	  "cluster": { "master": "mercury", "data_port": 7777, "sync_port": 7778, "framelock" : "software" },
+
+    "nodes": {
+        "mercury": { "address": "192.168.0.229", "display" : ["disp_c"], "resolution": [ 3840, 2160 ] },
+        "phobos": { "address":  "192.168.0.227", "display" : ["disp_l"], "resolution": [ 3840, 2160 ] },
+      }
+	  "displays": {
+      // computed for dgb home monitor setup, left monitor tilted inwards by 60 degrees
+        "disp_c": { "type": "offaxis", "ul": [-0.29, 0.1631, 0.6 ], "ll": [-0.29, -0.1631, 0.6 ], "lr": [ 0.29, -0.1631, 0.6 ], "viewport": "vp_forward" },
+        "disp_l": { "type": "offaxis", "ul": [-0.58, 0.1631, 0.0978 ], "ll": [-0.58, -0.1631, 0.0978 ], "lr": [ -0.29, -0.1631, 0.6 ], "viewport": "vp_left" },
+        "disp_r": { "type": "offaxis", "ul": [+0.29, 0.1631, 0.6 ], "ll": [+0.29, -0.1631, 0.6 ], "lr": [ +0.58, -0.1631, 0.0978 ], "viewport": "vp_right" },
+	    },
+
+	  "viewports": {
+        "vp_forward": { "x": 0, "y": 0, "width": 1.0, "height": 1.0 },
+        "vp_left": { "x": 0, "y": 0, "width": 1.0, "height": 1.0 },
+        "vp_right": { "x": 0, "y": 0, "width": 1.0, "height": 1.0 },
+
+	  }
+
+    },
+
+   "hexavision": {
+    "cameras": {
+      "default": {
+        "look_at": [ 0, 0, 700 ],
+        "position": [ 0, 0, 0 ],
+        "up": [ 0, 1, 0 ]
+      }
+    },
+    "cluster": {
+      "data_port": 7777,
+      "framelock": "software",
+      "master": "astrotour",
+      "sync_port": 7778
+    },
+    "default_camera": "default",
+    "displays": {
+      "disp_s-h-astrored_00": {
+        "index": [ 1, 0 ],
+        "ll": [ -1025.2, -167.914475, -107.38 ],
+        "lr": [ -1025.2, -167.914475, 489.65 ],
+        "monitor": 0,
+        "type": "offaxis",
+        "ul": [ -1025.2, 167.914475, -107.65 ]
+      },
+      "disp_s-h-astrored_01": {
+        "index": [ 2, 0 ],
+        "ll": [ -1023.5, -167.914475, 488.91 ],
+        "lr": [ -601.29, -167.914475, 911.08 ],
+        "monitor": 1,
+        "type": "offaxis",
+        "ul": [ -1023.5, 167.914475, 488.91 ]
+      },
+      "disp_s-h-astrogreen_00": {
+        "index": [ 3, 0 ],
+        "ll": [ -597.03, -167.914475, 912.84948 ],
+        "lr": [ 0, -167.914475, 912.84948 ],
+        "monitor": 0,
+        "type": "offaxis",
+        "ul": [ -597.03, 167.914475, 912.84948 ]
+      },
+      "disp_s-h-astrogreen_01": {
+        "index": [ 4, 0 ],
+        "ll": [ 0, -167.914475, 912.84948 ],
+        "lr": [ 597.03, -167.914475, 912.84948 ],
+        "monitor": 1,
+        "type": "offaxis",
+        "ul": [ 0, 167.914475, 912.84948 ]
+      },
+      "disp_s-h-astroblue_00": {
+        "index": [ 5, 0 ],
+        "ll": [ 601.29, -167.914475, 911.081713 ],
+        "lr": [ 1023.5, -167.914475, 488.918287 ],
+        "monitor": 0,
+        "type": "offaxis",
+        "ul": [ 601.29, 167.914475, 911.081713 ]
+      },
+      "disp_s-h-astroblue_01": {
+        "index": [ 6, 0 ],
+        "ll": [ 1025.2, -167.914475, 489.65052 ],
+        "lr": [ 1025.2, -167.914475, -107.38 ],
+        "monitor": 1,
+        "type": "offaxis",
+        "ul": [ 1025.2, 167.914475, 489.65052 ]
+      }
+    },
+    "nodes": {
+      "astrotour": {
+        "address": "192.168.0.117",
+        "display": "disp_s-h-astrogreen_00",
+        "fullscreen": true,
+        "index": [ 0, 0 ],
+        "resolution": [ 3840, 2160 ]
+      },
+      "s-h-astrored": {
+        "address": "192.168.0.132",
+        "displays": [ "disp_s-h-astrored_00", "disp_s-h-astrored_01" ],
+        "fullscreen": true,
+        "index": [ 1, 0 ],
+        "resolution": [ 3840, 2160 ]
+      },
+      "s-h-astrogreen": {
+        "address": "192.168.0.133",
+        "displays": [ "disp_s-h-astrogreen_00", "disp_s-h-astrogreen_01" ],
+        "fullscreen": true,
+        "index": [ 1, 0 ],
+        "resolution": [ 3840, 2160 ]
+      },
+      "s-h-astroblue": {
+        "address": "192.168.0.134",
+        "displays": [ "disp_s-h-astroblue_00", "disp_s-h-astroblue_01" ],
+        "fullscreen": true,
+        "index": [ 1, 0 ],
+        "resolution": [ 3840, 2160 ]
+      }
+    }
+  },
+
+
+      "svu-wall-mono": {
+	  "cameras": {
+      "default": {
+        "look_at": [ 0, 0, 700 ],
+        "position": [ 0, 0, 0 ],
+        "up": [ 0, 1, 0 ]
+      }
+    },
+    "cluster": {
+      "data_port": 7777,
+      "framelock": "software",
+      "master": "nodeH",
+      "sync_port": 7778
+    },
+    "default_camera": "default",
+      "nodes": {
+        "nodeL": {
+          "address": "192.168.0.132",
+          "display": [
+            "disp_L_004",
+            "disp_L_003",
+            "disp_L_002",
+            "disp_L_001",
+            "disp_L_000"
+          ],
+          "resolution": [
+            7680,
+            2160
+          ]
+        },
+        "nodeC": {
+          "address": "192.168.0.133",
+          "display": [
+            "disp_centre"
+          ],
+          "resolution": [
+            7680,
+            2160
+          ]
+        },
+        "nodeR": {
+          "address": "192.168.0.134",
+          "display": [
+            "disp_R_000",
+            "disp_R_001",
+            "disp_R_002",
+            "disp_R_003",
+            "disp_R_004"
+          ],
+          "resolution": [
+            7680,
+            2160
+          ]
+        },
+        "nodeH": {
+          "address": "192.168.0.131",
+          "display": [
+            "disp_head"
+          ],
+          "resolution": [
+            3840,
+            2160
+          ]
+        }
+      },
+      "displays": {
+        "disp_L_004": {
+          "type": "offaxis",
+          "ul": [
+            -10.364,
+            1.2,
+            -2.415
+          ],
+          "ll": [
+            -10.364,
+            -1.2,
+            -2.415
+          ],
+          "lr": [
+            -10.364,
+            -1.2,
+            0.636
+          ],
+          "viewport": "vp_disp_L_004"
+        },
+        "disp_L_003": {
+          "type": "offaxis",
+          "ul": [
+            -10.364,
+            1.2,
+            0.636
+          ],
+          "ll": [
+            -10.364,
+            -1.2,
+            0.636
+          ],
+          "lr": [
+            -9.98,
+            -1.2,
+            2.068
+          ],
+          "viewport": "vp_disp_L_003"
+        },
+        "disp_L_002": {
+          "type": "offaxis",
+          "ul": [
+            -9.98,
+            1.2,
+            2.068
+          ],
+          "ll": [
+            -9.98,
+            -1.2,
+            2.068
+          ],
+          "lr": [
+            -8.932,
+            -1.2,
+            3.116
+          ],
+          "viewport": "vp_disp_L_002"
+        },
+        "disp_L_001": {
+          "type": "offaxis",
+          "ul": [
+            -8.932,
+            1.2,
+            3.116
+          ],
+          "ll": [
+            -8.932,
+            -1.2,
+            3.116
+          ],
+          "lr": [
+            -7.5,
+            -1.2,
+            3.5
+          ],
+          "viewport": "vp_disp_L_001"
+        },
+        "disp_L_000": {
+          "type": "offaxis",
+          "ul": [
+            -7.5,
+            1.2,
+            3.5
+          ],
+          "ll": [
+            -7.5,
+            -1.2,
+            3.5
+          ],
+          "lr": [
+            -6.0,
+            -1.2,
+            3.5
+          ],
+          "viewport": "vp_disp_L_000"
+        },
+        "disp_centre": {
+          "type": "offaxis",
+          "ul": [
+            -6.0,
+            1.2,
+            3.5
+          ],
+          "ll": [
+            -6.0,
+            -1.2,
+            3.5
+          ],
+          "lr": [
+            6.0,
+            -1.2,
+            3.5
+          ],
+          "viewport": "vp_disp_centre"
+        },
+        "disp_R_000": {
+          "type": "offaxis",
+          "ul": [
+            6.0,
+            1.2,
+            3.5
+          ],
+          "ll": [
+            6.0,
+            -1.2,
+            3.5
+          ],
+          "lr": [
+            7.5,
+            -1.2,
+            3.5
+          ],
+          "viewport": "vp_disp_R_000"
+        },
+        "disp_R_001": {
+          "type": "offaxis",
+          "ul": [
+            7.5,
+            1.2,
+            3.5
+          ],
+          "ll": [
+            7.5,
+            -1.2,
+            3.5
+          ],
+          "lr": [
+            8.932,
+            -1.2,
+            3.116
+          ],
+          "viewport": "vp_disp_R_001"
+        },
+        "disp_R_002": {
+          "type": "offaxis",
+          "ul": [
+            8.932,
+            1.2,
+            3.116
+          ],
+          "ll": [
+            8.932,
+            -1.2,
+            3.116
+          ],
+          "lr": [
+            9.98,
+            -1.2,
+            2.068
+          ],
+          "viewport": "vp_disp_R_002"
+        },
+        "disp_R_003": {
+          "type": "offaxis",
+          "ul": [
+            9.98,
+            1.2,
+            2.068
+          ],
+          "ll": [
+            9.98,
+            -1.2,
+            2.068
+          ],
+          "lr": [
+            10.364,
+            -1.2,
+            0.636
+          ],
+          "viewport": "vp_disp_R_003"
+        },
+        "disp_R_004": {
+          "type": "offaxis",
+          "ul": [
+            10.364,
+            1.2,
+            0.636
+          ],
+          "ll": [
+            10.364,
+            -1.2,
+            0.636
+          ],
+          "lr": [
+            10.364,
+            -1.2,
+            -2.415
+          ],
+          "viewport": "vp_disp_R_004"
+        },
+        "disp_head": {
+          "type": "offaxis",
+          "ul": [
+            -3.0,
+            1.688,
+            3.5
+          ],
+          "ll": [
+            -3.0,
+            -1.688,
+            3.5
+          ],
+          "lr": [
+            3.0,
+            -1.688,
+            3.5
+          ],
+          "viewport": "vp_disp_head"
+        }
+      },
+      "viewports": {
+        "vp_disp_L_004": {
+          "x": 0.0,
+          "y": 0.0,
+          "width": 0.254296875,
+          "height": 1.0
+        },
+        "vp_disp_L_003": {
+          "x": 0.254296875,
+          "y": 0.0,
+          "width": 0.12356770833333333,
+          "height": 1.0
+        },
+        "vp_disp_L_002": {
+          "x": 0.37786458333333334,
+          "y": 0.0,
+          "width": 0.12356770833333333,
+          "height": 1.0
+        },
+        "vp_disp_L_001": {
+          "x": 0.5014322916666667,
+          "y": 0.0,
+          "width": 0.12356770833333333,
+          "height": 1.0
+        },
+        "vp_disp_L_000": {
+          "x": 0.625,
+          "y": 0.0,
+          "width": 0.125,
+          "height": 1.0
+        },
+        "vp_disp_centre": {
+          "x": 0.0,
+          "y": 0.0,
+          "width": 1.0,
+          "height": 1.0
+        },
+        "vp_disp_R_000": {
+          "x": 0.0,
+          "y": 0.0,
+          "width": 0.125,
+          "height": 1.0
+        },
+        "vp_disp_R_001": {
+          "x": 0.125,
+          "y": 0.0,
+          "width": 0.12356770833333333,
+          "height": 1.0
+        },
+        "vp_disp_R_002": {
+          "x": 0.24856770833333333,
+          "y": 0.0,
+          "width": 0.12356770833333333,
+          "height": 1.0
+        },
+        "vp_disp_R_003": {
+          "x": 0.37213541666666666,
+          "y": 0.0,
+          "width": 0.12356770833333333,
+          "height": 1.0
+        },
+        "vp_disp_R_004": {
+          "x": 0.495703125,
+          "y": 0.0,
+          "width": 0.254296875,
+          "height": 1.0
+        },
+        "vp_disp_head": {
+          "x": 0.0,
+          "y": 0.0,
+          "width": 1.0,
+          "height": 1.0
+        }
+      }
+      },
+
+    // An example non-clustered platform that uses viewports to output 4 views onto a single display.
+    "CAVE": {
+      "nodes": { "localhost": { "display": [ "disp_forward", "disp_left", "disp_right", "disp_up" ] } },
+
+      "displays": {
+        "disp_forward": { "type": "offaxis", "ul": [-1.0, 1.0, 2.0 ], "ll": [-1.0, -1.0, 2.0 ], "lr": [ 1.0, -1.0, 2.0 ], "viewport": "vp_forward" },
+        "disp_left": { "type": "offaxis", "ul": [-1.0, 1.0, 0.0 ], "ll": [-1.0, -1.0, 0.0 ], "lr": [-1.0, -1.0, 2.0 ], "viewport": "vp_left" },
+        "disp_right": { "type": "offaxis", "ul": [ 1.0, 1.0, 2.0 ], "ll": [ 1.0, -1.0, 2.0 ], "lr": [ 1.0, -1.0, 0.0 ], "viewport": "vp_right" },
+        "disp_up": { "type": "offaxis", "ul": [-1.0, 1.0, 0.0 ], "ll": [-1.0, 1.0, 2.0 ], "lr": [ 1.0, 1.0, 2.0 ], "viewport": "vp_up" }
+      },
+
+      "viewports": {
+        "vp_forward": { "x": 0, "y": 0, "width": 0.5, "height": 0.5 },
+        "vp_left": { "x": 0.5, "y": 0.5, "width": 0.5, "height": 0.5 },
+        "vp_right": { "x": 0.5, "y": 0, "width": 0.5, "height": 0.5 },
+        "vp_up": { "x": 0, "y": 0.5, "width": 0.5, "height": 0.5 }
+      },
+      //"stereo": { "mode": "sidebyside", "swap_eyes": false } 
+    },
+
+
+    // A dual-monitor display that assumes the displays create a corner "wedge".
+    // Doesn't use off-axis displays for perspective correction! Useful for simple 2D displays.
+    "CAVE-DualDisplay": {
+      "nodes": { "localhost": { "displays": [ "disp_l", "disp_r" ] } },
+      "displays": {
+        "disp_l": { "monitor": 0, "transform": { "rotate": [0, -45, 0] } },
+        "disp_r": { "monitor": 1, "transform": { "rotate": [0, 45, 0] } }
+      }
+    },
+
+
+    
+}
