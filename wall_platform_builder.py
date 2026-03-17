@@ -22,10 +22,10 @@ PPMM = 0.64              # Pixels per millimeter
 PANEL_HEIGHT_MM = 3375   # Wall height
 PANEL_Y_MM = 0.0         # Y position of panels
 DIST_MM = 3500           # Viewing distance
-OUTER_FLAT_MM = 3000     # 3m outer flat section
-CURVE_RADIUS_MM = 2864   # Curve radius
+OUTER_FLAT_MM = 3675     # 3m outer flat section
+CURVE_RADIUS_MM = 2865   # Curve radius
 CURVE_ANGLE_DEG = 90     # Total curve angle
-INNER_FLAT_MM = 7500     # 7.5m inner flat section
+INNER_FLAT_MM = 7575     # 7.5m inner flat section
 CURVE_SEGMENTS = 3       # Number of curve segments
 NODE_WIDTH_PX = 7680     # Dual 4K outputs per node
 OUTPUT_WIDTH_PX = 3840   # Single 4K output
@@ -53,15 +53,25 @@ def create_wall_cameras() -> Dict:
     displays = {}
     
     # Curve parameters
+    # screen curve of 90 degrees is made up of 30 sections, 96 pixels each, at PPMM.
+    curve90_px = 30 * 96
+    curve90_mm = curve90_px / PPMM
+    #print(f"curve90_px = {curve90_px}, length = {curve90_mm}")
+
     angle_per_segment = CURVE_ANGLE_DEG / CURVE_SEGMENTS
     delta_yaw = math.radians(angle_per_segment)
-    arc_per_segment_mm = CURVE_RADIUS_MM * math.radians(angle_per_segment)
-    chord_per_segment_mm = 2 * CURVE_RADIUS_MM * math.sin(delta_yaw / 2)
+
+    # the exact number of pixels taken to turn 90 degrees must be shared amongst n_segments
+    arc_per_segment_mm = curve90_mm / CURVE_SEGMENTS
+    chord_per_segment_mm = curve90_mm / CURVE_SEGMENTS
+    #arc_per_segment_mm = CURVE_RADIUS_MM * math.radians(angle_per_segment)
+    #chord_per_segment_mm = 2 * CURVE_RADIUS_MM * math.sin(delta_yaw / 2)
     
     # Build segments (right side, centre to outer)
     segments_right = []
     for i in range(CURVE_SEGMENTS):
         yaw_deg = angle_per_segment * (i + 0.5)
+        #print(f"yaw_deg = {yaw_deg}")
         segments_right.append(('curve', chord_per_segment_mm, yaw_deg, arc_per_segment_mm))
     segments_right.append(('flat', OUTER_FLAT_MM, CURVE_ANGLE_DEG, None))
     
@@ -141,6 +151,14 @@ def create_wall_cameras() -> Dict:
         "lr": [W/2, -H/2, cz],
         "width_px": round(centre_width_mm * PPMM)
     }
+
+    tw = 0
+    for key, value in displays.items():
+        w = value["width_px"]
+        tw += w
+        print(f"display {key} width_px = {w}")
+
+    print(f"Total display width = {tw} pixels")
     
     return displays
 
@@ -795,18 +813,26 @@ def create_config():
 
     # Step 2: Split cameras
     print("\n[2] Splitting cameras...")
-    cl001, ca = split_camera(displays, "disp_centre", 13)
+    cl001, ca = split_camera(displays, "disp_centre", 10.396)
     assert cl001 == "disp_centre_split1"
     assert ca == "disp_centre_split2"
 
-    c001, cb = split_camera(displays, ca, 45.97701)
+    c001, cb = split_camera(displays, ca, 44.199)
     assert c001 == "disp_centre_split2_split1"
     assert cb == "disp_centre_split2_split2"
 
-    c002, cr001 = split_camera(displays, cb, 85.1064)
+    c002, cr001 = split_camera(displays, cb, 79.208)
     assert c002 == "disp_centre_split2_split2_split1"
     assert cr001 == "disp_centre_split2_split2_split2"
     print(f"    Now there are {len(displays)} cameras")
+
+    tw = 0
+    for key, value in displays.items():
+        w = value["width_px"]
+        tw += w
+        print(f"display {key} width_px = {w}")
+
+    print(f"Total display width = {tw} pixels")
     
     # Step 2.5: Setup node allocator
     #print("\n[3] Setting up node allocator...")
@@ -818,7 +844,7 @@ def create_config():
     
     # Left side: L_004, L_003, L_002, L_001 (wall order)
     left_cams = [f"disp_L_{i:03d}" for i in range(4, 0, -1)]
-    left_cams.append("disp_centre_split1");
+    left_cams.append(cl001)
     allocator.allocate_to_node(left_cams, "nodeL", fill_from_left=True)
     
     # Centre
@@ -849,9 +875,9 @@ def create_config():
     # Step 6: Generate output to wall mapping
     print("\n[6] Generating output to wall mapping...")
     wall_order = [
-        'disp_L_004', 'disp_L_003', 'disp_L_002', 'disp_L_001',
-        'disp_centre',
-        'disp_R_001', 'disp_R_002', 'disp_R_003', 'disp_R_004'
+        'disp_L_004', 'disp_L_003', 'disp_L_002', 'disp_L_001', 'disp_centre_split1',
+        'disp_centre_split2_split1', 'disp_centre_split2_split2_split1',
+        'disp_centre_split2_split2_split2', 'disp_R_001', 'disp_R_002', 'disp_R_003', 'disp_R_004'
     ]
     mapping = get_output_to_wall_mapping(displays, allocator, wall_order)
     print(f"    Generated output mapping for {len(mapping)} nodes")

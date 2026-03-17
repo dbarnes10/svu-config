@@ -3,7 +3,7 @@
 wall_visualiser.py
 ──────────────────
 Reads a platform_config.json (CurvedWall format) and renders a
-19200 × 2160 PNG showing:
+20160 × 2160 PNG showing:
 
   • Display strip   – every display coloured by its rendering node,
                       with a highlighted band showing the viewport
@@ -22,7 +22,7 @@ import sys
 from PIL import Image, ImageDraw, ImageFont
 
 # ── Constants ────────────────────────────────────────────────────────────────
-CANVAS_W   = 19200
+CANVAS_W   = 20160
 CANVAS_H   = 2160
 TITLE_H    = 90          # top title bar
 DISP_H     = 1460        # main display strip

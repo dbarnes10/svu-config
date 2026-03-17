@@ -1,0 +1,27 @@
+{
+  "wall_width_px": 19200,
+  "wall_height_px": 2160,
+  "total_cameras": 12,
+  "nodes": [
+    "nodeL",
+    "nodeC",
+    "nodeR"
+  ],
+  "node_details": {
+    "nodeL": {
+      "cameras": 5,
+      "output1_rectangles": 3,
+      "output2_rectangles": 3
+    },
+    "nodeC": {
+      "cameras": 2,
+      "output1_rectangles": 1,
+      "output2_rectangles": 1
+    },
+    "nodeR": {
+      "cameras": 5,
+      "output1_rectangles": 3,
+      "output2_rectangles": 3
+    }
+  }
+}

@@ -1,0 +1,230 @@
+{
+  "nodeL": {
+    "output1": [
+      {
+        "output_rect": [
+          0,
+          0,
+          2352,
+          2160
+        ],
+        "wall_rect": [
+          0,
+          0,
+          2352,
+          2160
+        ],
+        "camera": "disp_L_004"
+      },
+      {
+        "output_rect": [
+          2352,
+          0,
+          960,
+          2160
+        ],
+        "wall_rect": [
+          2352,
+          0,
+          960,
+          2160
+        ],
+        "camera": "disp_L_003"
+      },
+      {
+        "output_rect": [
+          3312,
+          0,
+          528,
+          2160
+        ],
+        "wall_rect": [
+          3312,
+          0,
+          528,
+          2160
+        ],
+        "camera": "disp_L_002"
+      }
+    ],
+    "output2": [
+      {
+        "output_rect": [
+          0,
+          0,
+          432,
+          2160
+        ],
+        "wall_rect": [
+          3840,
+          0,
+          432,
+          2160
+        ],
+        "camera": "disp_L_002"
+      },
+      {
+        "output_rect": [
+          432,
+          0,
+          960,
+          2160
+        ],
+        "wall_rect": [
+          4272,
+          0,
+          960,
+          2160
+        ],
+        "camera": "disp_L_001"
+      },
+      {
+        "output_rect": [
+          1392,
+          0,
+          1008,
+          2160
+        ],
+        "wall_rect": [
+          5232,
+          0,
+          1008,
+          2160
+        ],
+        "camera": "disp_centre_split1"
+      }
+    ]
+  },
+  "nodeC": {
+    "output1": [
+      {
+        "output_rect": [
+          0,
+          0,
+          3840,
+          2160
+        ],
+        "wall_rect": [
+          6240,
+          0,
+          3840,
+          2160
+        ],
+        "camera": "disp_centre_split2_split1"
+      }
+    ],
+    "output2": [
+      {
+        "output_rect": [
+          0,
+          0,
+          3840,
+          2160
+        ],
+        "wall_rect": [
+          10080,
+          0,
+          3840,
+          2160
+        ],
+        "camera": "disp_centre_split2_split2_split1"
+      }
+    ]
+  },
+  "nodeR": {
+    "output1": [
+      {
+        "output_rect": [
+          1440,
+          0,
+          1008,
+          2160
+        ],
+        "wall_rect": [
+          13920,
+          0,
+          1008,
+          2160
+        ],
+        "camera": "disp_centre_split2_split2_split2"
+      },
+      {
+        "output_rect": [
+          2448,
+          0,
+          960,
+          2160
+        ],
+        "wall_rect": [
+          14928,
+          0,
+          960,
+          2160
+        ],
+        "camera": "disp_R_001"
+      },
+      {
+        "output_rect": [
+          3408,
+          0,
+          432,
+          2160
+        ],
+        "wall_rect": [
+          15888,
+          0,
+          432,
+          2160
+        ],
+        "camera": "disp_R_002"
+      }
+    ],
+    "output2": [
+      {
+        "output_rect": [
+          0,
+          0,
+          528,
+          2160
+        ],
+        "wall_rect": [
+          16320,
+          0,
+          528,
+          2160
+        ],
+        "camera": "disp_R_002"
+      },
+      {
+        "output_rect": [
+          528,
+          0,
+          960,
+          2160
+        ],
+        "wall_rect": [
+          16848,
+          0,
+          960,
+          2160
+        ],
+        "camera": "disp_R_003"
+      },
+      {
+        "output_rect": [
+          1488,
+          0,
+          2352,
+          2160
+        ],
+        "wall_rect": [
+          17808,
+          0,
+          2352,
+          2160
+        ],
+        "camera": "disp_R_004"
+      }
+    ]
+  }
+}
