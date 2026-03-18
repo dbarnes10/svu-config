@@ -9,7 +9,7 @@
   "platforms": {
 
       
-"svu-wall-1_08_05": {
+"svu-wall-2": {
     "cluster": {
         "data_port": "7777",
         "framelock": "software",
